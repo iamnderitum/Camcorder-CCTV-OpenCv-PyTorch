@@ -1,0 +1,10 @@
+name: opencv-qt
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - opencv
+  - pyqt
+  - qtpy
+prefix: /home/iamnderitum/anaconda3/envs/opencv-qt
