@@ -253,7 +253,7 @@ border-radius: 10px</string>
      <string/>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_2">
+   <widget class="QSlider" name="VOLUMESLIDER">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -309,7 +309,7 @@ border-radius: 10px</string>
    <zorder>VOLUME</zorder>
    <zorder>EXIT</zorder>
    <zorder>VOLUMELEVEL</zorder>
-   <zorder>horizontalSlider_2</zorder>
+   <zorder>VOLUMESLIDER</zorder>
    <zorder>label_5</zorder>
   </widget>
  </widget>
