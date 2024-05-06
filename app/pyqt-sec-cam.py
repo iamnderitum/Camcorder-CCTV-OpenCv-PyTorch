@@ -26,6 +26,15 @@ class MainApp(QMainWindow, ui):
 
     def start_monitoring(self):
         print("Start monitoring button Clicked")
+        webcam = cv2.VideoCapture(0)
+        while True:
+            _, im1 = webcam.read()
+            cv2.imshow("Opencv-Security-Camera", im1)
+            key = cv2.waitKey(10)
+            if key == 27:
+                break
+            webcam.release()
+            cv2.destroyAllWindows()
 
     def set_volume(self):
         self.VOLUMESLIDER.setVisible(True)
