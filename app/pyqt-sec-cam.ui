@@ -262,6 +262,9 @@ border-radius: 10px</string>
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 0);</string>
+    </property>
     <property name="minimum">
      <number>1</number>
     </property>
