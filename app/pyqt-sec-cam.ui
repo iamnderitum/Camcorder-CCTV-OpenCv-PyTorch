@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>804</width>
     <height>600</height>
    </rect>
   </property>
@@ -36,10 +36,10 @@
    <widget class="QPushButton" name="MONITORING">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>250</y>
-      <width>81</width>
-      <height>71</height>
+      <x>220</x>
+      <y>220</y>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -93,35 +93,224 @@ QPushButton#MONITORING:hover{
    <widget class="QPushButton" name="VOLUME">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>260</y>
-      <width>91</width>
-      <height>61</height>
+      <x>350</x>
+      <y>220</y>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton#MONITORING{
+     <string notr="true">QPushButton#VOLUME{
 	background-color: rgb(255, 0, 255);
+	border-radius: 10px;
+} 
 
+QPushButton#VOLUME:hover{
+	background-color: rgb(0, 255, 0);
+	
 } </string>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>resources/icons/volume.png</normaloff>resources/icons/volume.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="EXIT">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>270</y>
-      <width>101</width>
+      <x>480</x>
+      <y>220</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#EXIT{
+	background-color: rgb(255, 0, 255);
+	border-radius: 10px;
+} 
+
+QPushButton#EXIT:hover{
+	background-color: rgb(0, 255, 0);
+	
+} </string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>resources/icons/button_cancel.png</normaloff>resources/icons/button_cancel.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>570</y>
+      <width>84</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>97</number>
+    </property>
+    <property name="sliderPosition">
+     <number>15</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="VOLUMELEVEL">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>220</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 14pt bold &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>10</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>140</y>
+      <width>180</width>
+      <height>320</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border: 10px solid black;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>560</y>
+      <width>811</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border: 10px solid black;
+text-align: center;</string>
+    </property>
+    <property name="text">
+     <string>bIsHaThErU</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>134</y>
+      <width>421</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 255, 0);
+border: 5px solid white;
+border-radius: 10px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QSlider" name="VOLUMESLIDER">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>330</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="sliderPosition">
+     <number>15</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>150</y>
+      <width>311</width>
       <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Source Code Pro Black</family>
+      <pointsize>18</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Control Panel Options</string>
     </property>
    </widget>
+   <zorder>label</zorder>
+   <zorder>horizontalSlider</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>MONITORING</zorder>
+   <zorder>VOLUME</zorder>
+   <zorder>EXIT</zorder>
+   <zorder>VOLUMELEVEL</zorder>
+   <zorder>VOLUMESLIDER</zorder>
+   <zorder>label_5</zorder>
   </widget>
  </widget>
  <resources/>
