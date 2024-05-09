@@ -1,10 +1,11 @@
 from PyQt5.QtCore import *
-#from PyQt5.QtCore import QApplication
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 from PyQt5.QtGui import *
 #from PyQt5.QtGui import QMainWindow
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUiType
+from video_player import Ui_Dialog
 
 import sys
 import cv2
@@ -23,17 +24,37 @@ class MainApp(QMainWindow, ui):
         self.EXIT.clicked.connect(self.close_window)
         self.VOLUMESLIDER.setVisible(False)
         self.VOLUMESLIDER.valueChanged.connect(self.set_volume_level)
+        self.VIDEOPLAYERBUTTON.clicked.connect(self.openWindow)
 
+    
     def start_monitoring(self):
+        WINDOW_HEIGHT  = 600
+        WINDOW_WIDTH = 800
+        image_file_url = "resources/files/personal_video.mov"
+
+        cv2.namedWindow("Op encv-Security-Camera", cv2.WINDOW_NORMAL)
+        cv2.resizeWindow("Opencv-Security-Camera", WINDOW_WIDTH, WINDOW_HEIGHT)
+
         print("Start monitoring button Clicked")
-        webcam = cv2.VideoCapture(0)
-        while True:
-            _, im1 = webcam.read()
-            cv2.imshow("Opencv-Security-Camera", im1)
+        video_file = cv2.VideoCapture(image_file_url)
+        if not video_file.isOpened():
+            print("Error: Failed to open video File")
+            return 
+         
+        while True:  
+            _, video = video_file.read()
+            video_resized = cv2.resize(video, (WINDOW_WIDTH, WINDOW_HEIGHT))
+            print("video resized to: ", video_resized.shape)
+            cv2.imshow("Opencv-Security-Camera", video_resized)
+
+            if cv2.waitKey(20) & 0xFF == ord("q"):
+                break
+
             key = cv2.waitKey(10)
             if key == 27:
                 break
-            webcam.release()
+
+            video_file.release()
             cv2.destroyAllWindows()
 
     def set_volume(self):
@@ -50,6 +71,12 @@ class MainApp(QMainWindow, ui):
         cv2.waitKey(10000)
         self.VOLUMESLIDER.setVisible(False)
 
+    def openWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
 
 def main():
     app = QApplication(sys.argv)
@@ -58,4 +85,4 @@ def main():
     app.exec_()
 
 if __name__ == "__main__":
-    main()
+    main() 
