@@ -303,6 +303,19 @@ border-radius: 10px</string>
      <string>Control Panel Options</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="VIDEOPLAYERBUTTON">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>380</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>horizontalSlider</zorder>
    <zorder>label_2</zorder>
@@ -314,6 +327,7 @@ border-radius: 10px</string>
    <zorder>VOLUMELEVEL</zorder>
    <zorder>VOLUMESLIDER</zorder>
    <zorder>label_5</zorder>
+   <zorder>VIDEOPLAYERBUTTON</zorder>
   </widget>
  </widget>
  <resources/>
